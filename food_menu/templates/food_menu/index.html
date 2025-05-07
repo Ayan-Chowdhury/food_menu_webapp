@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Food App</h1>
-</body>
+    <ul>
+      {% for item in item_list %}
+      <li>Item Name: {{ item.item_name }}....Price:{{item.item_price}}</li>
+      {% endfor %}
+    </ul>
+  </body>
 </html>

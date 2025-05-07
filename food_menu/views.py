@@ -6,12 +6,10 @@ from django.template import loader
 
 def index(request):
     item_list=Item.objects.all()
-    template=loader.get_template('food_menu/index.html')
-
     context={
         'item_list':item_list,
     }
-    return HttpResponse(template.render(context,request))
+    return render (request, 'food_menu/index.html',context)
 
 def item(request):
     return HttpResponse('This is an item view')
