@@ -1,15 +1,17 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'food_menu/style.css' %}">
+    <title>Food APP</title>
   </head>
   <body>
     <h1>Food App</h1>
     <ul>
       {% for item in item_list %}
-      <li>Item Name: {{ item.item_name }}....Price:{{item.item_price}}</li>
+      <li><a href="{% url 'food_menu:detail' item.id %}">{{ item.item_name }} -- {{item.item_price}}</li></a> 
       {% endfor %}
     </ul>
   </body>
