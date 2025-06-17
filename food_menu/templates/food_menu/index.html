@@ -1,21 +1,30 @@
+{% extends 'food_menu/base.html' %}
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'food_menu/style.css' %}">
-    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
 
-    <title>Food APP</title>
-  </head>
-  <body>
-    <h1>Food App</h1>
-    <ul>
-      {% for item in item_list %}
-      <li><a href="{% url 'food_menu:detail' item.id %}">{{ item.item_name }} -- {{item.item_price}}</li></a> 
-      {% endfor %}
-    </ul>
-  </body>
-  <link rel="stylesheet" href="{% static 'bootstrap/js/bootstrap.min.js' %}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{% static 'food_menu/style.css' %}">
+  <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+
+  <title>Food APP</title>
+</head>
+
+<body>
+  {% block body %}
+
+  <h1>Food App</h1>
+  <ul>
+    {% for item in item_list %}
+    <li><a href="{% url 'food_menu:detail' item.id %}">{{ item.item_name }} -- {{item.item_price}}</li></a>
+    {% endfor %}
+  </ul>
+  {% endblock %}
+</body>
+<link rel="stylesheet" href="{% static 'bootstrap/js/bootstrap.min.js' %}">
+<link rel="stylesheet" href="{% static 'bootstrap/js/bootstrap.min.js.map' %}">
+
 </html>
